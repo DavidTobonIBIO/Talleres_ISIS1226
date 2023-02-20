@@ -1,0 +1,8 @@
+Cliente: juanes
+Dirección cliente: gomelolandia
+Id del pedido: 16
+Items:
+corral ---> 14000
+Precio Neto ---> 14000
+IVA ---> 2660
+Precio Total Pedido ---> 16660

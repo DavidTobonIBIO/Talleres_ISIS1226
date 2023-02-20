@@ -1,0 +1,11 @@
+Cliente: dave
+Dirección cliente: nose
+Id del pedido: 0
+Items:
+combo todoterreno ---> 34317
+corralita ---> 13000
+Adiciones:
+	cebolla ---> 1000
+Precio Neto ---> 48317
+IVA ---> 9180
+Precio Total Pedido ---> 57497

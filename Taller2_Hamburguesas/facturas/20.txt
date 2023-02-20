@@ -1,0 +1,10 @@
+Cliente: sergio
+Dirección cliente: cali
+Id del pedido: 20
+Items:
+corral ---> 14000
+Adiciones:
+	cebolla ---> 1000
+Precio Neto ---> 15000
+IVA ---> 2850
+Precio Total Pedido ---> 17850

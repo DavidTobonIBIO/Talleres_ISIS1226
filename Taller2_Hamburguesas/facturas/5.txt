@@ -1,0 +1,18 @@
+Cliente: Martha 
+Dirección cliente: av de los caminos oscuros del valle 133
+Id del pedido: 5
+Items:
+corral pollo ---> 15000
+Adiciones:
+	frijol refrito ---> 4500
+	cebolla ---> 1000
+Eliminaciones:
+	tocineta picada ---> 0
+combo especial ---> 32085
+todoterreno ---> 25000
+Adiciones:
+	tomate ---> 1000
+	cebolla ---> 1000
+Precio Neto ---> 79585
+IVA ---> 15121
+Precio Total Pedido ---> 94706

@@ -1,0 +1,7 @@
+Cliente: corraL pollo
+Dirección cliente: dkl\
+Id del pedido: 4
+Items:
+Precio Neto ---> 0
+IVA ---> 0
+Precio Total Pedido ---> 0

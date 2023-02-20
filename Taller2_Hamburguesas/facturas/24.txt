@@ -1,0 +1,12 @@
+Cliente: cristiano
+Dirección cliente: medio oriente
+Id del pedido: 24
+Items:
+gaseosa ---> 5000
+	 Calorías ---> 37
+agua cristal con gas ---> 5000
+	 Calorías ---> 0
+Calorías Totales ---> 37
+Precio Neto ---> 10000
+IVA ---> 1900
+Precio Total Pedido ---> 11900

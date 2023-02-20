@@ -1,0 +1,8 @@
+Cliente: motta
+Dirección cliente: en un lugar exotico
+Id del pedido: 18
+Items:
+corral ---> 14000
+Precio Neto ---> 14000
+IVA ---> 2660
+Precio Total Pedido ---> 16660

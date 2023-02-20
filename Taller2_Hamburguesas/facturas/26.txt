@@ -1,0 +1,27 @@
+Cliente: alejandro
+Dirección cliente: vecino
+Id del pedido: 26
+Items:
+corral pollo ---> 15000
+	 Calorías ---> 113
+Adiciones:
+	lechuga ---> 1000
+		 Calorías ---> 15
+Eliminaciones:
+	queso mozzarella ---> 0
+		 Calorías eliminadas ---> 70
+	tomate ---> 0
+		 Calorías eliminadas ---> 18
+corralita ---> 13000
+	 Calorías ---> 320
+Eliminaciones:
+	cebolla ---> 0
+		 Calorías eliminadas ---> 40
+combo todoterreno ---> 29667
+	 Calorías ---> 1270
+gaseosa ---> 5000
+	 Calorías ---> 37
+Calorías Totales ---> 1627
+Precio Neto ---> 63667
+IVA ---> 12097
+Precio Total Pedido ---> 75764

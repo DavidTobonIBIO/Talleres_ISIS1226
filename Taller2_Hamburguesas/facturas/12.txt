@@ -1,0 +1,8 @@
+Cliente: santiago
+Dirección cliente: tunja
+Id del pedido: 12
+Items:
+corral ---> 14000
+Precio Neto ---> 14000
+IVA ---> 2660
+Precio Total Pedido ---> 16660

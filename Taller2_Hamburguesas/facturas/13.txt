@@ -1,0 +1,8 @@
+Cliente: juan camilo
+Dirección cliente: calle 127
+Id del pedido: 13
+Items:
+combo todoterreno ---> 29667
+Precio Neto ---> 29667
+IVA ---> 5637
+Precio Total Pedido ---> 35304

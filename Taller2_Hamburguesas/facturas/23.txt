@@ -1,0 +1,10 @@
+Cliente: david
+Dirección cliente: xd
+Id del pedido: 23
+Items:
+gaseosa ---> 5000
+	 Calorías ---> 0
+Calorías Totales ---> 0
+Precio Neto ---> 5000
+IVA ---> 950
+Precio Total Pedido ---> 5950
