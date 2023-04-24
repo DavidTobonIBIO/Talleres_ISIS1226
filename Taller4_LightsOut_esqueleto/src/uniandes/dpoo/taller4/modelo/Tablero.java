@@ -156,6 +156,37 @@ public class Tablero
 		}
 		jugadas++;
 	}
+	
+	// Edicion de metodo jugar segun la descripcion del juego en wikipedia
+	public void play(int row, int col)
+	{
+		int tam = tablero.length;
+
+		for (int dr = -1; dr < 2; dr++)
+		{
+			for (int dc = -1; dc < 2; dc++)
+			{
+				int r = row + dr;
+				int c = col + dc;
+				
+				if (r >= 0 && r < tam && c >= 0 && c < tam && !isDiagonal(row, col, r, c))
+				{
+					
+					tablero[r][c] = !tablero[r][c];
+				}
+			}
+		}
+		jugadas++;
+	}
+	
+	private boolean isDiagonal(int row, int col, int r, int c)
+	{
+		/* 
+		 * Es diagonal cuando la fila y la columna actuales no son
+		 * iguales a la fila y columna de la casilla clickeada
+		 */
+		return row != r && col != c;
+	}
 
 	/**
 	 * Informa si todas las casillas del tablero están iluminadas
@@ -164,13 +195,13 @@ public class Tablero
 	 */
 	public boolean tableroIluminado()
 	{
-		boolean iluminado = true;
+		boolean iluminado = false;
 
-		for (int i = 0; i < tablero.length && iluminado; i++)
-			for (int ii = 0; ii < tablero.length && iluminado; ii++)
+		for (int i = 0; i < tablero.length && !iluminado; i++)
+			for (int ii = 0; ii < tablero.length && !iluminado; ii++)
 				iluminado = tablero[i][ii];
 
-		return iluminado;
+		return !iluminado;
 	}
 
 	/**
