@@ -8,6 +8,11 @@ public class Combo implements Producto
 	private String nombreCombo;
 	private ArrayList<ProductoMenu> itemsCombo;
 
+	public ArrayList<ProductoMenu> getItemsCombo()
+	{
+		return itemsCombo;
+	}
+
 	public Combo(Double descuento, String nombreCombo)
 	{
 		this.descuento = descuento;

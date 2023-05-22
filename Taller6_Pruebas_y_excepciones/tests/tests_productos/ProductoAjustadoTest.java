@@ -48,9 +48,6 @@ public class ProductoAjustadoTest
 	@Order(3)
 	public void checkGenerarFactura()
 	{
-		System.out.println(productoAjustado.getAgregados().size());
-		System.out.println(productoAjustado.getEliminados().size());
-		System.out.println(productoAjustado.generarTextoFactura());
 		assertTrue(productoAjustado.generarTextoFactura().contains("Eliminaciones"));
 		assertTrue(productoAjustado.generarTextoFactura().contains("Adiciones"));		
 	}
