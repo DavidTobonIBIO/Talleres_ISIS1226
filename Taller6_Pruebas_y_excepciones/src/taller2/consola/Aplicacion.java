@@ -72,33 +72,39 @@ public class Aplicacion
 
 	private void ejecutarIniciarPedido()
 	{
-		String nombreCliente = input("Ingresar nombre del cliente: ");
-		String direccionCliente = input("Ingresar dirección del cliente: ");
-		restaurante.iniciarPedido(nombreCliente, direccionCliente);
-		boolean continuar = true;
-		while (continuar)
+		try
 		{
-			System.out.println("Opciones del pedido:");
-			System.out.println("1. Ver Menu");
-			System.out.println("2. Añadir producto al pedido");
-			System.out.println("3. Añadir combo al pedido");
-			System.out.println("4. Finalizar pedido");
-
-			int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opción"));
-			if (opcion_seleccionada == 1)
-				ejecutarMostrarMenuRestaurante();
-			else if (opcion_seleccionada == 2)
-				ejecutarAgregarProductoAlPedido();
-			else if (opcion_seleccionada == 3)
-				ejecutarAgregarComboAlPedido();
-			else if (opcion_seleccionada == 4)
+			String nombreCliente = input("Ingresar nombre del cliente: ");
+			String direccionCliente = input("Ingresar dirección del cliente: ");
+			restaurante.iniciarPedido(nombreCliente, direccionCliente);
+			boolean continuar = true;
+			while (continuar)
 			{
-				ejecutarCerrarYGuardarPedido();
-				continuar = false;
-			} else
-				System.out.println("\nPor favor seleccione una opción válida.");
+				System.out.println("Opciones del pedido:");
+				System.out.println("1. Ver Menu");
+				System.out.println("2. Añadir producto al pedido");
+				System.out.println("3. Añadir combo al pedido");
+				System.out.println("4. Finalizar pedido");
+	
+				int opcion_seleccionada = Integer.parseInt(input("Por favor seleccione una opción"));
+				if (opcion_seleccionada == 1)
+					ejecutarMostrarMenuRestaurante();
+				else if (opcion_seleccionada == 2)
+					ejecutarAgregarProductoAlPedido();
+				else if (opcion_seleccionada == 3)
+					ejecutarAgregarComboAlPedido();
+				else if (opcion_seleccionada == 4)
+				{
+					ejecutarCerrarYGuardarPedido();
+					continuar = false;
+				} else
+					System.out.println("\nPor favor seleccione una opción válida.");
+			}
 		}
-
+		catch (NumberFormatException e)
+		{
+			System.out.println("Debe seleccionar uno de los números de las opciones.");
+		}
 	}
 
 	private void ejecutarCerrarYGuardarPedido()

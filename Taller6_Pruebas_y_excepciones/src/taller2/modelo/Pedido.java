@@ -5,6 +5,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import taller4.excepciones.PrecioPedidoException;
+
 public class Pedido
 {
 	private static int numeroPedidos;
@@ -36,6 +38,13 @@ public class Pedido
 	public void adicionarIngredienteAlProducto(Ingrediente ingrediente)
 	{
 		productoActual.adicionarIngrediente(ingrediente);
+		try
+		{
+			revisarPrecioPedido(ingrediente);
+		} catch (PrecioPedidoException e)
+		{
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public void eliminarIngredienteDelProducto(Ingrediente ingrediente)
@@ -46,11 +55,37 @@ public class Pedido
 	public void agregarProductoAjustado()
 	{
 		productosPedido.add(productoActual);
+		try
+		{
+			revisarPrecioPedido(productoActual);
+		} catch (PrecioPedidoException e)
+		{
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public void agregarCombo(Combo nuevoCombo)
 	{
 		productosPedido.add(nuevoCombo);
+		try
+		{
+			revisarPrecioPedido(nuevoCombo);
+		} catch (PrecioPedidoException e)
+		{
+			System.out.println(e.getMessage());;
+		}
+	}
+
+	private void revisarPrecioPedido(Producto producto) throws PrecioPedidoException
+	{
+		int precioActual = getPrecioTotalPedido();
+		
+		if (precioActual > 150000)
+		{
+			productosPedido.remove(producto);
+			throw new PrecioPedidoException("El precio del pedido no puede exceder los 150000 pesos: precio actual es " + precioActual + " al añadir " + producto.getNombre());
+		}
+		
 	}
 
 	public void guardarFactura()
@@ -103,7 +138,7 @@ public class Pedido
 		return IVARedondeado;
 	}
 
-	private int getPrecioTotalPedido()
+	public int getPrecioTotalPedido()
 	{
 		int precioTotal = this.getPrecioNetoPedido() + this.getPrecioIVAPedido();
 		return precioTotal;

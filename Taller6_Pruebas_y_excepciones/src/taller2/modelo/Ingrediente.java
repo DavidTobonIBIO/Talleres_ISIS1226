@@ -1,6 +1,6 @@
 package taller2.modelo;
 
-public class Ingrediente
+public class Ingrediente implements Producto
 {
 	private String nombre;
 	private int costoAdicional;
@@ -16,9 +16,15 @@ public class Ingrediente
 		return nombre;
 	}
 
-	public int getCostoAdicional()
+	public int getPrecio()
 	{
 		return costoAdicional;
+	}
+
+	@Override
+	public String generarTextoFactura()
+	{
+		return null;
 	}
 
 }

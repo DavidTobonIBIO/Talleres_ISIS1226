@@ -12,7 +12,7 @@ import taller4.excepciones.ProductoRepetidoException;
 
 public class Restaurante
 {
-
+    
 	private ArrayList<Ingrediente> ingredientes;
 	private ArrayList<ProductoMenu> menuBase;
 	private ArrayList<Combo> combos;
@@ -28,16 +28,16 @@ public class Restaurante
 		this.mapaIngredientes = new HashMap<String, Ingrediente>();
 		this.mapaProductos = new HashMap<String, Producto>();
 	}
+	
 	public void cargarInformacionRestaurante(String archivoIngredientes, String archivoMenu, String archivoCombos)
 	{
-
 		cargarIngredientes(archivoIngredientes);
 		cargarMenu(archivoMenu);
 		cargarCombos(archivoCombos);
-
+	
 	}
 
-	private void cargarIngredientes(String filePath) throws IngredienteRepetidoException
+	private void cargarIngredientes(String filePath)
 	{
 		this.ingredientes = new ArrayList<Ingrediente>();
 		try
@@ -49,14 +49,18 @@ public class Restaurante
 				String linea = lector.nextLine();
 				String[] datos = linea.split(";");
 				Ingrediente ingrediente = new Ingrediente(datos[0], Integer.parseInt(datos[1]));
-				
+								
 				if (mapaIngredientes.get(ingrediente.getNombre()) == null)
 				{
 					ingredientes.add(ingrediente);
 					mapaIngredientes.put(ingrediente.getNombre(), ingrediente);
 				}
 				else
-					throw new IngredienteRepetidoException(ingrediente);
+					try {
+	                    throw new IngredienteRepetidoException("Ingrediente repetido: " + ingrediente.getNombre());
+	                } catch (IngredienteRepetidoException e) {
+	                    System.out.println("Error en la carga de datos: " + e.getMessage());
+	                }
 				
 			}
 			lector.close();
@@ -68,7 +72,7 @@ public class Restaurante
 
 	}
 
-	private void cargarMenu(String filePath) throws ProductoRepetidoException
+	private void cargarMenu(String filePath)
 	{
 		this.menuBase = new ArrayList<ProductoMenu>();
 		try
@@ -80,14 +84,18 @@ public class Restaurante
 				String linea = lector.nextLine();
 				String[] datos = linea.split(";");
 				ProductoMenu producto = new ProductoMenu(datos[0], Integer.parseInt(datos[1]));
-				
+								
 				if (mapaProductos.get(producto.getNombre()) == null)
 				{
 					menuBase.add(producto);
 					mapaProductos.put(producto.getNombre(), producto);
 				}
 				else
-					throw new ProductoRepetidoException(producto);
+					try {
+	                    throw new ProductoRepetidoException("Producto repetido: " + producto.getNombre());
+	                } catch (ProductoRepetidoException e) {
+	                    System.out.println("Error en la carga de datos: " + e.getMessage());
+	                }
 			}
 			lector.close();
 		} catch (FileNotFoundException e)
@@ -292,7 +300,7 @@ public class Restaurante
 			System.out.println(combo.getNombre() + " " + combo.getPrecio());
 		System.out.println("\nADICIONES:");
 		for (Ingrediente ingrediente : this.getIngredientes())
-			System.out.println(ingrediente.getNombre() + " " + ingrediente.getCostoAdicional());
+			System.out.println(ingrediente.getNombre() + " " + ingrediente.getPrecio());
 		try
 		{
 			Thread.sleep(500);

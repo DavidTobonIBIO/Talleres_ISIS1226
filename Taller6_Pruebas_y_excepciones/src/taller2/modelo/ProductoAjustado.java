@@ -34,7 +34,7 @@ public class ProductoAjustado implements Producto
 			precio += base.getPrecio();
 
 		for (Ingrediente ingrediente : agregados)
-			precio += ingrediente.getCostoAdicional();
+			precio += ingrediente.getPrecio();
 
 		return precio;
 	}
@@ -89,7 +89,7 @@ public class ProductoAjustado implements Producto
 		{
 			textoFactura += "\nAdiciones:";
 			for (Ingrediente ingrediente : agregados)
-				textoFactura += "\n\t" + ingrediente.getNombre() + " ---> " + ingrediente.getCostoAdicional();
+				textoFactura += "\n\t" + ingrediente.getNombre() + " ---> " + ingrediente.getPrecio();
 		}
 
 		if (!eliminados.isEmpty())
@@ -100,6 +100,11 @@ public class ProductoAjustado implements Producto
 		}
 
 		return textoFactura;
+	}
+
+	public void eliminarIngredienteDeAgregados(Ingrediente ingrediente)
+	{
+		agregados.remove(ingrediente);
 	}
 
 }
