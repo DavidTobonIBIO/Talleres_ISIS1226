@@ -1,0 +1,7 @@
+Cliente: corral
+Dirección cliente: xd
+Id del pedido: 2
+Items:
+Precio Neto ---> 0
+IVA ---> 0
+Precio Total Pedido ---> 0

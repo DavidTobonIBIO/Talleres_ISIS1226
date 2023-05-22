@@ -1,0 +1,15 @@
+Cliente: Santiago
+Dirección cliente: Calle 167
+Id del pedido: 3
+Items:
+wrap de pollo ---> 15000
+Adiciones:
+	lechuga ---> 1000
+Eliminaciones:
+	tomate ---> 0
+papas grandes ---> 6900
+Adiciones:
+	suero costeño ---> 3000
+Precio Neto ---> 25900
+IVA ---> 4921
+Precio Total Pedido ---> 30821

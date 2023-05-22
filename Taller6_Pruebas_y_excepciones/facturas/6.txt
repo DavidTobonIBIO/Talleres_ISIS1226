@@ -1,0 +1,9 @@
+Cliente: sergio
+Dirección cliente: nose
+Id del pedido: 6
+Items:
+corral ---> 14000
+combo todoterreno ---> 29667
+Precio Neto ---> 43667
+IVA ---> 8297
+Precio Total Pedido ---> 51964

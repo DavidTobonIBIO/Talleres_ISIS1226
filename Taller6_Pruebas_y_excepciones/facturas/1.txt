@@ -1,0 +1,8 @@
+Cliente: Sergio
+Dirección cliente: Calle nose
+Id del pedido: 1costeña ---> 20000
+Adiciones:
+	suero costeño ---> 3000
+Precio Neto ---> 23000
+IVA ---> 4370
+Precio Total Pedido ---> 27370

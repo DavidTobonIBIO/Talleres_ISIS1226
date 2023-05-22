@@ -1,0 +1,13 @@
+Cliente: juan
+Dirección cliente: jose
+Id del pedido: 21
+Items:
+corral ---> 14000
+Adiciones:
+	cebolla ---> 1000
+Eliminaciones:
+	tomate ---> 0
+corralita ---> 13000
+Precio Neto ---> 28000
+IVA ---> 5320
+Precio Total Pedido ---> 33320

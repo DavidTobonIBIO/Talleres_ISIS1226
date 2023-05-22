@@ -1,0 +1,8 @@
+Cliente: Jose
+Dirección cliente: cali
+Id del pedido: 11
+Items:
+corral ---> 14000
+Precio Neto ---> 14000
+IVA ---> 2660
+Precio Total Pedido ---> 16660

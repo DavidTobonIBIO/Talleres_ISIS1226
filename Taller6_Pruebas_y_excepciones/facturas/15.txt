@@ -1,0 +1,8 @@
+Cliente: sebastian
+Dirección cliente: abbey road
+Id del pedido: 15
+Items:
+corral ---> 14000
+Precio Neto ---> 14000
+IVA ---> 2660
+Precio Total Pedido ---> 16660
