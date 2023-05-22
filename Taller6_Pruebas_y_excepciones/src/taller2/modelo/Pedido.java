@@ -29,15 +29,26 @@ public class Pedido
 	{
 		return idPedido;
 	}
-
+	
+	public Producto getProductoActual()
+	{
+		return productoActual;
+	}
+	
 	public void nuevoProductoAjustado(Producto nuevoItem)
 	{
 		productoActual = new ProductoAjustado((ProductoMenu) nuevoItem);
+		try
+		{
+			revisarPrecioPedido(productoActual);
+		} catch (PrecioPedidoException e)
+		{
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public void adicionarIngredienteAlProducto(Ingrediente ingrediente)
 	{
-		productoActual.adicionarIngrediente(ingrediente);
 		try
 		{
 			revisarPrecioPedido(ingrediente);
@@ -54,7 +65,6 @@ public class Pedido
 
 	public void agregarProductoAjustado()
 	{
-		productosPedido.add(productoActual);
 		try
 		{
 			revisarPrecioPedido(productoActual);
@@ -66,7 +76,6 @@ public class Pedido
 
 	public void agregarCombo(Combo nuevoCombo)
 	{
-		productosPedido.add(nuevoCombo);
 		try
 		{
 			revisarPrecioPedido(nuevoCombo);
@@ -76,18 +85,28 @@ public class Pedido
 		}
 	}
 
-	private void revisarPrecioPedido(Producto producto) throws PrecioPedidoException
-	{
-		int precioActual = getPrecioTotalPedido();
-		
-		if (precioActual > 150000)
-		{
-			productosPedido.remove(producto);
-			throw new PrecioPedidoException("El precio del pedido no puede exceder los 150000 pesos: precio actual es " + precioActual + " al añadir " + producto.getNombre());
-		}
-		
-	}
+	public void revisarPrecioPedido(Producto producto) throws PrecioPedidoException {
+	    if (producto instanceof Ingrediente) 
+	    {
+	        productoActual.adicionarIngrediente((Ingrediente) producto);
+	        int precioActual = getPrecioTotalPedido();
 
+	        if (precioActual > 150000) 
+	        {
+	            productoActual.eliminarIngredienteDeAgregados((Ingrediente) producto);
+	            throw new PrecioPedidoException("El precio del pedido no puede exceder los 150000 pesos: precio actual es " + precioActual + " al añadir " + producto.getNombre());
+	        }
+	    } else 
+	    {
+	        productosPedido.add(producto);
+	        int precioActual = getPrecioTotalPedido();
+	        if (precioActual > 150000) 
+	        {
+	            productosPedido.remove(producto);
+	            throw new PrecioPedidoException("El precio del pedido no puede exceder los 150000 pesos: precio actual es " + precioActual + " al añadir " + producto.getNombre());
+	        }
+	    }
+	}
 	public void guardarFactura()
 	{
 		String textoFactura = this.generarTextoFactura();
@@ -113,7 +132,7 @@ public class Pedido
 		}
 	}
 
-	private int getPrecioNetoPedido()
+	public int getPrecioNetoPedido()
 	{
 		int precioNeto = 0;
 
@@ -144,7 +163,7 @@ public class Pedido
 		return precioTotal;
 	}
 
-	private String generarTextoFactura()
+	public String generarTextoFactura()
 	{
 		String textoFactura = "";
 
