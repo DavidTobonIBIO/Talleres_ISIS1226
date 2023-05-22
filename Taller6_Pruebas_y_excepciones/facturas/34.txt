@@ -1,0 +1,8 @@
+Cliente: David
+Dirección cliente: Calle 17
+Id del pedido: 34
+Items:
+Producto menu 1 ---> 70000
+Precio Neto ---> 70000
+IVA ---> 13300
+Precio Total Pedido ---> 83300

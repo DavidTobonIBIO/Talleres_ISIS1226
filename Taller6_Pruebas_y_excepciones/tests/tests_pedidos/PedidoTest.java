@@ -77,8 +77,6 @@ public class PedidoTest
 		
 		String facturaGenerada = pedido.generarTextoFactura().strip();
 		facturaLeida = facturaLeida.strip();
-		System.out.println(facturaGenerada);
-		System.out.println(facturaLeida);
 		assertTrue(facturaGenerada.equals(facturaLeida));
 	}
 	
